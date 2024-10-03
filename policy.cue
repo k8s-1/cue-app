@@ -1,5 +1,5 @@
-
-package main
+// test all configs with
+// cue eval policy.cue file.cue
 
 import "encoding/yaml"
 
