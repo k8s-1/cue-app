@@ -23,7 +23,8 @@ base: yaml.MarshalStream([
 		name: "Mary"
 	},
 ])
-baseKustomization?: "etc..." // a base kustomization will also be necessary
+baseKustomization?: "etc..." // a base kustomization will also be necessary,
+// since it's the same for every app, it can be centralized in one place
 
 // also export a kustomization file that has the app.yaml stream file
 // as resources
