@@ -11,7 +11,7 @@ import (
 
 // standard deploy || sfs #Definition imported ...
 
-// first export -e base to base folder
+// first export -e base to base folder with _tool.cue
 // cue export stream.cue -e stream --out text <--- export a yaml stream to --- separated yaml
 base: yaml.MarshalStream([
 	{
@@ -29,7 +29,7 @@ baseKustomization?: "etc..."
 // also export a kustomization file that has the app.yaml stream file
 // as resources
 
-// next export each kustomization to app folders
+// next export each kustomization to app folders with a _tool.cue
 kustomization: {
 	val: "etc"
 
