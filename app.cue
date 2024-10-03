@@ -23,6 +23,7 @@ base: yaml.MarshalStream([
 		name: "Mary"
 	},
 ])
+baseKustomization?: "etc..."
 //text: yaml.MarshalStream(base) // yaml stream list of objects
 
 // also export a kustomization file that has the app.yaml stream file
