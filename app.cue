@@ -13,7 +13,7 @@ import (
 
 // first export -e base to base folder
 // cue export stream.cue -e stream --out text <--- export a yaml stream to --- separated yaml
-base: [
+base: yaml.MarshalStream([
 	{
 		num:  123
 		name: "John"
@@ -22,8 +22,8 @@ base: [
 		num:  432
 		name: "Mary"
 	},
-]
-text: yaml.MarshalStream(base) // yaml stream list of objects
+])
+//text: yaml.MarshalStream(base) // yaml stream list of objects
 
 // also export a kustomization file that has the app.yaml stream file
 // as resources
