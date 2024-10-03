@@ -12,6 +12,8 @@ base: {
   num: 123
   name: "John"
 }
+// also export a kustomization file that has the app.yaml stream
+// as resources
 
 // next export each kustomization to app folders
 kustomization: {
