@@ -15,6 +15,7 @@ base: {
 // also export a kustomization file that has the app.yaml stream
 // as resources
 
+
 // next export each kustomization to app folders
 kustomization: {
   val: "etc"
