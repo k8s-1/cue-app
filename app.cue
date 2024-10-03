@@ -12,6 +12,7 @@ import (
 // standard deploy || sfs #Definition imported ...
 
 // first export -e base to base folder
+// cue export stream.cue -e stream --out text <--- export a yaml stream to --- separated yaml
 base: [
 	{
 		num:  123
@@ -23,7 +24,7 @@ base: [
 	},
 ]
 
-text: yaml.MarshalStream([for x in base {x}])
+text: yaml.MarshalStream(base)
 
 // also export a kustomization file that has the app.yaml stream
 // as resources
