@@ -13,7 +13,7 @@ base: {
   name: "John"
 }
 
-// next export each app kustomization to app folders
+// next export each kustomization to app folders
 kustomization: {
   val: "etc"
 
