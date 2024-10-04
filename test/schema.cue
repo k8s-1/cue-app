@@ -7,4 +7,7 @@ message: "Hello, \(#Name)!"
 
 #A: {
 	name: string
+  _test: string
+
+  lovely: _test
 }
