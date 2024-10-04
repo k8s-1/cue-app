@@ -11,5 +11,5 @@ message: "Hello, \(#Name)!"
 	name: string
   #test: string
 
-  lovely: test
+  lovely: #test
 }
