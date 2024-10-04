@@ -1,4 +1,5 @@
-package schema
+//package schema
+import "github.com/k8s-1/app/schema"
 
 
 k: #A & {
