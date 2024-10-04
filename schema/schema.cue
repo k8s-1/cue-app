@@ -9,7 +9,7 @@ message: "Hello, \(#Name)!"
 
 #A: {
 	name: string
-  test: string
+  #test: string
 
   lovely: test
 }
