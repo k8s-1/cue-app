@@ -1,7 +1,6 @@
 package schema
 
-// definitions are a powerful way
-// to add any value anywhere
+// Definitions are a powerful way to add values
 // Because CUE knows that definitions are used for validation, they aren’t output as data.
 
 message: "Hello, \(#Name)!"
