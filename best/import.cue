@@ -11,6 +11,4 @@ import (
 	}
 }
 
-yaml.MarshalStream([
-	for _, v in #objects {v},
-])
+yaml.MarshalStream([ for _, v in #objects {v}, ])
