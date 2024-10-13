@@ -1,3 +1,4 @@
+//cue export import.cue --out text
 import (
 	"encoding/yaml"
 	"github.com/k8s-1/app/best"
