@@ -15,7 +15,6 @@ def get_json(environment):
         non_json, json_part = content.split('{', 1)
         return non_json, json.loads('{' + json_part)
 
-
 # fetch version for the specified app and previous environment
 previous_environments = {
     "qa":"dev",
