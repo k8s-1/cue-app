@@ -8,8 +8,8 @@ import sys
 app = str(sys.argv[1])
 env = str(sys.argv[2])
 
-# helper to split cue file into non-json and json
 def get_json(environment):
+    """Split file into non-JSON and JSON components."""
     with open(environment + '.cue', 'r') as file:
         content = file.read()
         non_json, json_part = content.split('{', 1)
