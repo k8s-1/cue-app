@@ -11,4 +11,4 @@ NEW_JSON=$(echo "$JSON" | jq --arg new_version "$NEW_VERSION" '.app1 = $new_vers
 {
     echo "$NON_JSON"
     echo "$NEW_JSON"
-} > dev.cue.test
+} > dev.cue
