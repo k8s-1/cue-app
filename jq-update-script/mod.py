@@ -5,8 +5,8 @@
 import json
 import sys
 
-app = str(sys.argv[1])
-env = str(sys.argv[2])
+app = sys.argv[1]
+env = sys.argv[2]
 
 def get_json(environment):
     """Split file into non-JSON and JSON components."""
@@ -26,4 +26,4 @@ version = data[app]
 non_json, data = get_json(env)
 data[app] = version
 with open(env + '.cue', 'w') as file:
-    file.write(non_json_part + json.dumps(data, indent=2))
+    file.write(non_json + json.dumps(data, indent=2))
