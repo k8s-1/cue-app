@@ -23,8 +23,8 @@ def main():
     previous_environments = {
         "qa": "dev",
     }
-    _, json_data = get_json(previous_environments[env])
-    version = json_data[app]
+    _, json_data_previous = get_json(previous_environments[env])
+    version = json_data_previous[app]
 
     # update version in the current environment's .cue file
     non_json, json_data = get_json(env)
