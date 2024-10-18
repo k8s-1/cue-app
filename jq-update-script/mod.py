@@ -23,15 +23,15 @@ def main():
     previous_environments = {
         "qa": "dev",
     }
-    _, data = get_json(previous_environments[env])
-    version = data[app]
+    _, json_data = get_json(previous_environments[env])
+    version = json_data[app]
 
     # update version in the current environment's .cue file
-    non_json, data = get_json(env)
-    data[app] = version
+    non_json, json_data = get_json(env)
+    json_data[app] = version
 
     with open(env + '.cue', 'w') as file:
-        file.write(non_json + json.dumps(data, indent=2))
+        file.write(non_json + json.dumps(json_data, indent=2))
 
 
 if __name__ == "__main__":
