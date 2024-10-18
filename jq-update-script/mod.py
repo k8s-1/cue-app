@@ -15,14 +15,17 @@ def get_json(env):
 def main():
     app, env = sys.argv[1], sys.argv[2]
 
-    # fetch app version from previous environment
-    version = get_json({"qa": "dev"}[env])[1][app]
+    previous_environments = {
+        "qa": "dev",
+    }
 
-    non_json, data = get_json(env)
-    data[app] = version
+    version = get_json(previous_environments[env])[1][app]
+
+    non_json, _json = get_json(env)
+    _json[app] = version
 
     with open(f"{env}.cue", 'w') as f:
-        f.write(non_json + json.dumps(data, indent=2))
+        f.write(non_json + json.dumps(_json, indent=2))
 
 
 if __name__ == "__main__":
