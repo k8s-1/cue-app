@@ -16,8 +16,8 @@ def get_json(environment: str) -> tuple[str, dict]:
 
 
 def main():
-    app = sys.argv[1]  # Application name
-    env = sys.argv[2]  # Environment name
+    app = sys.argv[1]  # application name
+    env = sys.argv[2]  # environment name
 
     # fetch version for the specified app and previous environment
     previous_environments = {
