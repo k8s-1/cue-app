@@ -16,21 +16,21 @@ def get_json(environment: str) -> tuple[str, dict]:
 
 
 def main():
-    app = sys.argv[1]  # application name
-    env = sys.argv[2]  # environment name
+    app = sys.argv[1]
+    environment = sys.argv[2]
 
     # fetch version for the specified app and previous environment
     previous_environments = {
         "qa": "dev",
     }
-    _, json_data_previous = get_json(previous_environments[env])
+    _, json_data_previous = get_json(previous_environments[environment])
     version = json_data_previous[app]
 
     # update version in the current environment's .cue file
-    non_json, json_data = get_json(env)
+    non_json, json_data = get_json(environment)
     json_data[app] = version
 
-    with open(env + '.cue', 'w') as file:
+    with open(environment + '.cue', 'w') as file:
         file.write(non_json + json.dumps(json_data, indent=2))
 
 
