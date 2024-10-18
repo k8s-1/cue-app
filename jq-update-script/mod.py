@@ -15,6 +15,7 @@ def get_json(env):
 def main():
     app, env = sys.argv[1], sys.argv[2]
 
+    # fetch app version from previous environment
     version = get_json({"qa": "dev"}[env])[1][app]
 
     non_json, data = get_json(env)
