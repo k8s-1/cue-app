@@ -6,32 +6,19 @@ import json
 import sys
 
 
-def get_json(environment: str) -> tuple[str, dict]:
-    """Split file into non-JSON and JSON components."""
-
-    with open(environment + '.cue', 'r') as file:
-        content = file.read()
-
-    non_json, json_part = content.split('{', 1)
-    return non_json, json.loads('{' + json_part)
+def get_json(env):
+    with open(f"{env}.cue") as f:
+        non_json, json_part = f.read().split('{', 1)
+        return non_json, json.loads('{' + json_part)
 
 
 def main():
-    app, environment = sys.argv[1], sys.argv[2]
-
-    # fetch version for the specified app and previous environment
-    previous_environments = {
-        "qa": "dev",
-    }
-    _, json_data_previous = get_json(previous_environments[environment])
-    version = json_data_previous[app]
-
-    # update version in the current environment's .cue file
-    non_json, json_data = get_json(environment)
-    json_data[app] = version
-
-    with open(environment + '.cue', 'w') as file:
-        file.write(non_json + json.dumps(json_data, indent=2))
+    app, env = sys.argv[1], sys.argv[2]
+    _, version_data = get_json({"qa": "dev"}[env])
+    non_json, data = get_json(env)
+    data[app] = version_data[app]
+    with open(f"{env}.cue", 'w') as f:
+        f.write(non_json + json.dumps(data, indent=2))
 
 
 if __name__ == "__main__":
