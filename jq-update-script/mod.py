@@ -8,6 +8,7 @@ import sys
 
 def get_json(environment: str) -> tuple[str, dict]:
     """Split file into non-JSON and JSON components."""
+
     with open(environment + '.cue', 'r') as file:
         content = file.read()
 
