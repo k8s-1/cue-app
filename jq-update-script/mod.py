@@ -14,9 +14,12 @@ def get_json(env):
 
 def main():
     app, env = sys.argv[1], sys.argv[2]
-    _, version_data = get_json({"qa": "dev"}[env])
+
+    version = get_json({"qa": "dev"}[env])[1][app]
+
     non_json, data = get_json(env)
-    data[app] = version_data[app]
+    data[app] = version
+
     with open(f"{env}.cue", 'w') as f:
         f.write(non_json + json.dumps(data, indent=2))
 
