@@ -6,7 +6,7 @@ import json
 import sys
 
 
-def get_json(env):
+def get_json(env: str) -> tuple[str, dict]:
     with open(f"{env}.cue") as f:
         non_json, json_part = f.read().split('{', 1)
         return non_json, json.loads('{' + json_part)
